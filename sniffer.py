@@ -45,6 +45,41 @@ def main():
             print(TAB_2 + 'Version: {}, Header Length: {}, TTL: {},'.format(version, header_length, ttl))
             print(TAB_2 + 'Protocol: {}, Source: {}, Target: {}'.format(proto, src, target))
 
+            # ICMP Type
+            if proto == 1:
+                icmp_type, code, checksum, data = icmp_packet(data)
+                print(TAB_1 + 'ICMP Packet:')
+                print(TAB_2 + 'Type: {}, Code: {}, Checksum: {}'.format(icmp_type, code, checksum))
+                print(TAB_2 + 'Data:')
+                print(format_multi_line(DATA_TAB_3, data))
+
+            # TCP Type
+            elif proto == 6:
+                src_port, dest_port, sequence, acknowledgement, flag_urg, flag_ack, flag_psh, flag_rst, flag_syn, \
+                flag_fin, data = tcp_packet(data)
+                print(TAB_1 + 'TCP Packet:')
+                print(TAB_2 + 'Source Port: {}, Destination Port: {}'.format(src_port, dest_port))
+                print(TAB_2 + 'Sequence: {}, Acknowledgement: {}'.format(sequence, acknowledgement))
+                print(TAB_2 + 'Flags:')
+                print(TAB_3 + 'URG: {}, ACK: {}, PSH: {}, RST: {}, SYN: {}, fin: {}'.format(flag_urg, flag_ack,
+                                                                                            flag_psh, flag_rst,
+                                                                                            flag_syn, flag_fin))
+                print(TAB_2 + 'Data:')
+                print(format_multi_line(DATA_TAB_3, data))
+
+            # UDP Type
+            elif proto == 17:
+                src_port, dest_port, size, data = udp_segment(data)
+                print(TAB_1 + 'UDP Packet:')
+                print(TAB_2 + 'Source Port: {}, Destination Port: {}, Length: {}'.format(src_port, dest_port, size))
+                print(TAB_2 + 'Data:')
+                print(format_multi_line(DATA_TAB_3, data))
+
+            # Other
+            else:
+                print(TAB_1 + 'Data:')
+                print(format_multi_line(DATA_TAB_2, data))
+
 
 # Unpack ethernet frame to find the data
 def ethernet_frame(data):
@@ -57,6 +92,7 @@ def get_mac_addr(bytes_addr):
     bytes_str = map('{:02x}'.format, bytes_addr)
     mac_addr = ':'.join(bytes_str).upper()
     return mac_addr
+
 
 # Unpack IPv4 packet
 def ipv4_packet(data):
