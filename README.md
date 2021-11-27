@@ -24,5 +24,22 @@
 
 <div>
   <h2>How to Run</h2>
+  <p>NOTE: It is important to use a Linux system to run this sniffer.</p>
+  <ul>
+    <li>Make sure you have all the dependencies required to run the program</li>
+    <li>Download <code>sniffer.py</code> from the folder</li>
+    <li>Run <code>sniffer.py</code> from your terminal window using the following command: <code>python sniffer.py</code></li>
+  </ul>
+  <p>Soon, you should see packets being decoded in your terminal, as demonstrated <a href="https://github.com/ps4449/network-packet-sniffer/blob/main/output/output_1.jpeg">here</a>. This <a href="https://github.com/ps4449/network-packet-sniffer/blob/main/report.pdf">report</a> will give you a detailed overview of what this decoded data means and what the principles behind the data are.</p>
+</div>
+<br>
+  
+<div>
+  <h2>Contributors</h2>
+  <ul>
+    <li><a href="https://github.com/ps4449">Priyanka Srinivas</a></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>
 <br>
