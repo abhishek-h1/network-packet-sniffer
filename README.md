@@ -38,7 +38,7 @@
   <h2>Contributors</h2>
   <ul>
     <li><a href="https://github.com/ps4449">Priyanka Srinivas</a></li>
-    <li></li>
+    <li><a href="https://github.com/abhishek-h1">Abhishek Hindocha</a></li>
     <li></li>
   </ul>
 </div>
