@@ -39,6 +39,7 @@
   <ul>
     <li><a href="https://github.com/ps4449">Priyanka Srinivas</a></li>
     <li><a href="https://github.com/abhishek-h1">Abhishek Hindocha</a></li>
+    <li><a href="https://github.com/Vaibhavoid">Vaibhav Singh</a></li>
     <li></li>
   </ul>
 </div>
